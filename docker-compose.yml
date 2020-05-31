@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  # jupyter r-notebook docker image
+  rnlp:
+    build: 
+      context: ./Dockerfiles
+      dockerfile: Dockerfile.rnlp
+    container_name: rnlp
+    image: rnlp:latest
+    ports: # HOST:CONTAINER
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - notebooks:/home/jovyan/notebooks
+      - data:/home/jovyan/data
+    command: ["start.sh", "jupyter", "lab", "--LabApp.token=''"]
+
+#
+# Volume definition
+# 
+volumes:
+  repo:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${VOL_DIR}
+  notebooks:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/notebooks
+      o: bind
+  data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/data
+      o: bind

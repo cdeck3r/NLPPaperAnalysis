@@ -1,0 +1,17 @@
+#
+# The file sources from one of the standard jupyter notebook. 
+# Source: https://jupyter-docker-stacks.readthedocs.io/en/latest/
+#
+
+FROM jupyter/r-notebook
+
+USER root
+
+#
+# Additional libs 
+#
+ADD installAddLibs.R /tmp/installAddLibs.R
+RUN Rscript /tmp/installAddLibs.R 
+
+USER $NB_UID
+
