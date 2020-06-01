@@ -4,7 +4,7 @@ The [International Workshop on Smart Sensing Systems (IWSSS) 2019](https://iwsss
 
 **Take away:** Provide an repeatable approach to follow-up on future IWSSS occasions or apply the methods to other fields and its conferences' publications.
 
-You find the full analysis in the notebook [IWSSSAnalysis.ipynb](notebooks/IWSSSAnalysis.ipynb).
+You find the full analysis in the notebook [IWSSSAnalysis.ipynb](notebooks/IWSSSAnalysis.ipynb). There is a [blog post](https://cdeck3r.com/2020-05-31-NLPPaperAnalysis/) showing some selected results. 
 
 ## Research Questions 
 
